@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Directives</title>
+</head>
+<body>
+    
+    <div id="app">
+        <!--
+        <h1>Vue Mart</h1>
+        <h2>Shopping Cart</h2>
+        <ul>
+            <li v-for="item in shoppingCart">
+                {{ item.label }} : {{ item.cost }}€
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="item in apiResponse">
+                <a v-bind:href="item.url">{{ item.name }}</a>
+            </li>
+        </ul>
+        -->
+
+
+        <button @click="greeting">Greetings !</button>
+
+        <div>
+            <h2>Montrer ma couleur préférée</h2>
+            <button v-on:click="showColor">Couleur préférée</button>
+        </div>
+
+        <div>
+            <h2>Changer ma couleur préférée {{ favoriteColor }}</h2>
+            <label for="change-color">Changer la couleur:</label>
+            <input type="text" name="change-color" v-model="favoriteColor">
+        </div>
+
+    </div>
+    
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                favoriteColor: blue,
+                /*
+                shoppingCart: [
+                    { label: 'Pommes', cost: 6 },
+                    { label: 'Bananes', cost: 2 },
+                    { label: 'Noix de coco', cost: 8 }
+                ],
+                apiResponse: [
+                    { name: 'GitHub', url: 'https://www.github.com' },
+                    { name: 'Twitter', url: 'https://www.twitter.com' },
+                    { name: 'Netlify', url: 'https://www.netlify.com' }
+                ],
+                */
+            },
+                
+
+
+            computed:{
+                label(){
+                    return ': '+this.favoriteColor
+                }
+            },
+
+            methods: {
+                greeting(){
+                    alert("Hello and welcome to you!")
+                },
+                showColor(){
+                    alert(this.favoriteColor)
+                },
+                alertColor(colorLabel) {
+                    alert('Ma couleur préférée est ' + colorLabel)
+                },
+            }
+        })
+
+    </script>
+</body>
+</html>

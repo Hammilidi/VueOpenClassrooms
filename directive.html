@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <label for="username">Nom d'utilisateur</label> 
+        <input id="username" type="text" v-model="username" /><br>
+        <label for="pw">Mot de passe</label>
+        <input id="pw" type="password" v-model="password" />
+    </div>
+    
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                username: '',
+                password: ''
+            }
+        })
+    </script>
+</body>
+</html>

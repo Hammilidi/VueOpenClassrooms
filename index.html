@@ -14,7 +14,7 @@
 
         <h2>Panier</h2>
         <ul>
-            <li>Pommes: {{costOfApples}}$</li>
+            <li v-if="costOfApples>0">Pommes: {{costOfApples}}$</li>
             <li>Bananes: {{costOfBanana}}$</li>
             <li>Noix de coco: {{costCoconuts}}$ </li>
         </ul>
@@ -32,7 +32,7 @@
         const app = new Vue({
             el: "#app",
             data: {
-                costOfApples: 5,
+                costOfApples: 0,
                 costOfBanana: 10,
                 costOfCoconuts: 3,
                 },
