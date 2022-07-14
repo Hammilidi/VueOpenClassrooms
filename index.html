@@ -14,10 +14,16 @@
 
         <h2>Panier</h2>
         <ul>
-            <li>Pommes: {{costOfApple}} {{2+2}}$</li>
-            <li>Bananes: {{costOfBanana}} {{2*5}} $</li>
-            <li>Noix de coco: {{costCocoNuts}} {{3}}$ </li>
+            <li>Pommes: {{costOfApples}}$</li>
+            <li>Bananes: {{costOfBanana}}$</li>
+            <li>Noix de coco: {{costCoconuts}}$ </li>
         </ul>
+        <p>total: {{totalAmount}}$</p>
+
+        <h2>Horaires d'ouverture</h2>
+        <p>Dimanche: 10h - 16h</p>
+        <p>Du lundi au vendredi : 09h - 17h</p>
+        <p>Samedi : 09h30 - 18h00</p>
 
 
     </div>
@@ -26,13 +32,13 @@
         const app = new Vue({
             el: "#app",
             data: {
-                message: "Bonjour DigiScia",
-                answerToLife: 42,
-                groceries:["Pommes", "Bananes", "Noix de coco"],
-                timeForLunch: false,
-                info: {
-                    topic: "VueJS",
-                    length: 5
+                costOfApples: 5,
+                costOfBanana: 10,
+                costOfCoconuts: 3,
+                },
+            computed: {
+                totalAmount(){
+                    return (this.costOfApples + this.costOfBanana + this.costOfCoconuts)
                 }
             }
         })
