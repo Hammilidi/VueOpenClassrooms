@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>VueMart</title>
+</head>
+<body>
+    <div id="app">
+        <h1>VueMart !</h1>
+        <p>Bienvenue sur la plateforme qui vous guide sur vos choix de légumes !</p>
+
+        <h2>Panier</h2>
+        <ul>
+            <li>Pommes: {{costOfApple}} {{2+2}}$</li>
+            <li>Bananes: {{costOfBanana}} {{2*5}} $</li>
+            <li>Noix de coco: {{costCocoNuts}} {{3}}$ </li>
+        </ul>
+
+
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: "Bonjour DigiScia",
+                answerToLife: 42,
+                groceries:["Pommes", "Bananes", "Noix de coco"],
+                timeForLunch: false,
+                info: {
+                    topic: "VueJS",
+                    length: 5
+                }
+            }
+        })
+    </script>
+</body>
+</html>
